@@ -1,12 +1,21 @@
 function ReadCSV({posts}) {
     console.log(posts)
+    
+    const obj = JSON.parse(posts)
+    {obj.map((post)=>console.log(post))}
     return (
-        {posts}
-    //   <ul>
-    //     {posts.map(post => (
-    //       <li>{post.}</li>
-    //     ))}
-    //   </ul>
+        <>
+        <table>
+            <thead>
+                <tr>
+                    {obj.map((post)=><th>post</th>)}
+                </tr>
+            </thead>
+        </table>
+        <ul>
+            {obj.map((post)=><li>{post.value}</li>)}
+        </ul>
+        </>
     );
   }
   
