@@ -1,7 +1,11 @@
+// This is sample of generate table
 function ReadCSV({ posts }) {
   console.log(posts);
 
   const obj = JSON.parse(posts);
+  const obj_keys = Object.keys(obj[0]);
+
+  // console.log(obj_keys)
   {
     obj.map((post) => {
       post;
@@ -9,11 +13,22 @@ function ReadCSV({ posts }) {
   }
   return (
     <>
-      <ul>
-        {obj.map((post) => (
-          <li>{post.value}</li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          {obj_keys.map((obj_key) => (
+            <th>{obj_key}</th>
+          ))}
+        </thead>
+        <tbody>
+          {obj.map((post) => (
+            <tr>
+              <td>{post.number}</td>
+              <td>{post.sample}</td>
+              <td>{post.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 }
