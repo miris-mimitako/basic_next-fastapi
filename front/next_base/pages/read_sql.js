@@ -1,5 +1,5 @@
-// This is sample of generating table from CSV file.
-function ReadCSV({ posts }) {
+// This is sample of generate table
+function ReadSQL({ posts }) {
   console.log(posts);
 
   const obj = JSON.parse(posts);
@@ -24,9 +24,9 @@ function ReadCSV({ posts }) {
         <tbody>
           {obj.map((post) => (
             <tr key={post.id}>
-              <td>{post.number}</td>
-              <td>{post.sample}</td>
-              <td>{post.value}</td>
+              <td>{post.id}</td>
+              <td>{post.name}</td>
+              <td>{post.age}</td>
             </tr>
           ))}
         </tbody>
@@ -36,7 +36,7 @@ function ReadCSV({ posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://127.0.0.1:8000/read_csv");
+  const res = await fetch("http://127.0.0.1:8000/read_sql");
   const posts = await res.json();
   return {
     props: {
@@ -45,4 +45,4 @@ export async function getStaticProps() {
   };
 }
 
-export default ReadCSV;
+export default ReadSQL;
