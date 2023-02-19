@@ -19,6 +19,6 @@ async def read_csv():
 
 @router.get("/read_sql/", tags=["sql"])
 async def read_csv():
-    RSQL = rsql.ReadCSV()
+    RSQL = rsql.SQLread()
     res = RSQL.main()
     return res
