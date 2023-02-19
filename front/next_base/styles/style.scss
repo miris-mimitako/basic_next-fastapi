@@ -1,0 +1,46 @@
+.header{
+    &_link{
+        &--content{
+            margin: 8px;
+        }
+        &--wrapper{
+            display: flex;
+        }
+    }
+}
+
+.card{
+    &_box{
+        margin: 8px;
+    }
+    &_box:hover{
+        box-shadow: 4px 4px 4px rgb(189, 192, 227);
+    }
+    &_body{
+        &--content{
+            font-size: 0.8em;
+            color: rgb(55, 55, 55);
+        }
+    }
+
+    &_title{
+        //content
+        color: black;
+        font-size: 1.5em;
+        //layout
+        margin: 4px;
+    }
+    &_category{
+        color: grey;
+    }
+    &_wrapper{
+        // flex box
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        align-items: center;
+        // layout
+        margin: 8px;
+        
+    }
+}
