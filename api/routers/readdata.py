@@ -6,6 +6,7 @@ append_path = os.path.join(Path(current_path).parent.parent,"modules")
 import sys
 sys.path.append(append_path)
 from modules import readcsv as rcsv
+from modules import readsql as rsql
 
 
 router = APIRouter()
@@ -14,4 +15,10 @@ router = APIRouter()
 async def read_csv():
     RCSV = rcsv.ReadCSV()
     res = RCSV.main()
+    return res
+
+@router.get("/read_sql/", tags=["sql"])
+async def read_csv():
+    RSQL = rsql.SQLread()
+    res = RSQL.main()
     return res

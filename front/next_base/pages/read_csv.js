@@ -15,13 +15,15 @@ function ReadCSV({ posts }) {
     <>
       <table>
         <thead>
-          {obj_keys.map((obj_key) => (
-            <th key = {obj_key}>{obj_key}</th>
-          ))}
+          <tr>
+            {obj_keys.map((obj_key) => (
+              <th key={obj_key}>{obj_key}</th>
+            ))}
+          </tr>
         </thead>
         <tbody>
           {obj.map((post) => (
-            <tr key = {post.number}>
+            <tr key={post.id}>
               <td>{post.number}</td>
               <td>{post.sample}</td>
               <td>{post.value}</td>
